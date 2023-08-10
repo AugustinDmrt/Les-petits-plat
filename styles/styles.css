@@ -28,9 +28,22 @@ header{
     font-family: Anton;
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: center;
+    padding-top: 150px ;
 
+}
+
+#inputContainer{
+    display: flex;
+    padding-top: 30px ;
+    justify-content: center;
+
+}
+
+#inputContainer input{
+    display: block;
+    height: 52px;
+    width: 900px;
 }
 
 
