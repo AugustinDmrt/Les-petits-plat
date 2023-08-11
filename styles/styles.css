@@ -1,0 +1,99 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-image: url(/assets/images/HeaderImage/lampos-aritonang-24gr_9lcdes-unsplash1.png);
+    background-size: cover;
+    width: 100%;
+    height: 667px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#logo{
+    display: flex;
+    margin-top: 51px;
+    margin-left: 69px;
+    width: 260px;
+}
+
+#textHeader{
+    color:#FFD15B ;
+    font-size: 1.5em;
+    font-family: Anton;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 150px ;
+
+}
+
+.searchBar{
+    margin-top: 30px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.searchBarContent{
+    background-color: white;
+    width: 900px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 15px;
+
+}
+
+input{
+    border: none;
+    font-size: 15px;
+    padding: 20px;
+    width: 800px;
+}
+
+input:focus{
+    outline:none!important ;
+
+}
+
+a{
+    text-decoration: none;
+    background-color: #1B1B1B;
+    border-radius: 11px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a i{
+    color: White;
+}
+
+main{
+    background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
