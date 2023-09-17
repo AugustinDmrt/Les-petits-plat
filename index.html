@@ -22,12 +22,61 @@
         </div>
     </header>
     <main>
-        <div id="filterGroup">
-            <select name="ingredient" id="ingredientFilter" class="filters">Ingrédients</select>
-            <select name="appareils" id="appareilsFilter" class="filters">Appareils</select>
-            <select name="ustensiles" id="ustensilesFilter" class="filters">Ustensiles</select>
+        <div id="filterComponent">
+            <div id="filterGroup">
+                <select name="ingredient" id="ingredientFilter" class="filters"><option value="ingredient">Ingredients</option></select>
+                <select name="appareils" id="appareilsFilter" class="filters"><option value="appareil">Appareils</option></select>
+                <select name="ustensiles" id="ustensilesFilter" class="filters"><option value="ustensile">Ustensiles</option></select>
+            </div>
+            <div id="filterText">
+                <p>1500 recettes</p>
+            </div>
         </div>
-        
+        <section id="recipList">
+            <div class="card">
+                <div class="cardImage">
+                    <img src="assets/images/RecipeImage/Recette01.jpg" alt="recette1">
+                    <span>10min</span>
+                </div>
+                <div class="cardTitle">
+                    <h2>Limonade de Coco 1</h2>
+                </div>
+                <div class="cardDescribe">
+                    <p>RECETTE</p>
+                    <p>Mettre les glaçons à votre goût dans le blender, Ajouter le lait  la crème de coco, le jus de 2 citrons et le sucre ensemble. Mixer jusqu'à obtenir la consistance désirée.</p>
+                </div>
+                <div class="cardIngredient">
+                    <p>INGREDIENT</p>
+                    <div class="listComponent">
+                        <div class="listItem">
+                            <p>Lait de coco</p>
+                            <span>400ml</span>
+                        </div>
+                        <div class="listItem">
+                            <p>Jus de citron</p>
+                            <span>2</span>
+                        </div>
+                        <div class="listItem">
+                            <p>Créme de coco</p>
+                            <span>4 cuillères</span>
+                        </div>
+                        <div class="listItem">
+                            <p>Sucre</p>
+                            <span>20g</span>
+                        </div>
+                        <div class="listItem">
+                            <p>Glaçons</p>
+                            <span>2</span>
+                        </div>
+                        <div class="listItem">
+                            <p>Coca cola</p>
+                            <span>40ml</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
     <script src="https://kit.fontawesome.com/8646550a66.js" crossorigin="anonymous"></script>
 </body>
