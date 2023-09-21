@@ -12,7 +12,7 @@ function displayRecipes(recipes) {
         image.src = "../assets/images/RecipeImage/"+recipe.image;
         image.alt = "recette";
         const timeSpan = document.createElement("span");
-        timeSpan.textContent = recipe.time;
+        timeSpan.textContent = recipe.time+" min";
         cardImage.appendChild(image);
         cardImage.appendChild(timeSpan);
         card.appendChild(cardImage);
@@ -30,8 +30,21 @@ function displayRecipes(recipes) {
         descriptionHeader.textContent = "RECETTE";
         const description = document.createElement("p");
         description.textContent = recipe.description;
+        const appliance = document.createElement("input");
+        appliance.setAttribute("type", "hidden")
+        appliance.setAttribute("value",`${recipe.appliance}`);
         cardDescribe.appendChild(descriptionHeader);
         cardDescribe.appendChild(description);
+        cardDescribe.appendChild(appliance);
+        recipe.ustensils.forEach(ustensil => {
+            const listUstensils = document.createElement("div");
+            listUstensils.classList.add("listUstensil");
+            const inputUstensil = document.createElement("input");
+            inputUstensil.setAttribute("type", "hidden")
+            inputUstensil.setAttribute("value",`${ustensil}`);
+            listUstensils.appendChild(inputUstensil);
+            cardDescribe.appendChild(listUstensils);
+        });
         card.appendChild(cardDescribe);
         
         const cardIngredient = document.createElement("div");
@@ -40,6 +53,7 @@ function displayRecipes(recipes) {
         ingredientsHeader.textContent = "INGREDIENT";
         const listComponent = document.createElement("div");
         listComponent.classList.add("listComponent");
+
         
         recipe.ingredients.forEach(ingredient => {
             const listItem = document.createElement("div");
@@ -47,11 +61,17 @@ function displayRecipes(recipes) {
             const ingredientName = document.createElement("p");
             ingredientName.textContent = ingredient.ingredient;
             const ingredientQuantity = document.createElement("span");
-            ingredientQuantity.textContent = `${ingredient.quantity} ${ingredient.unit || ''}`;
+            if (ingredient.quantity != undefined) {
+                ingredientQuantity.textContent = `${ingredient.quantity} ${ingredient.unit || ''}`;
+            } else {
+                ingredientQuantity.textContent = '';
+            }
             listItem.appendChild(ingredientName);
             listItem.appendChild(ingredientQuantity);
             listComponent.appendChild(listItem);
         });
+
+        
         
         cardIngredient.appendChild(ingredientsHeader);
         cardIngredient.appendChild(listComponent);
