@@ -111,6 +111,7 @@ main{
     border-radius: 11px;
     border: none;
     padding-left: 15px;
+    outline: none;
 }
 
 .filters{
@@ -201,6 +202,18 @@ main{
     padding-right: 20px;
     margin-bottom: 15px;
 }
+
+.cardDescribe p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: wrap;
+    max-height: 100px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5; 
+}
+    
+
 
 .cardDescribe p:first-child{
     padding-bottom: 7px;
