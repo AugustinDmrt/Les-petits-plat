@@ -14,7 +14,7 @@
         </div>
         <div class="searchBar">
             <div class="searchBarContent">
-                <input type="search" placeholder="Recherche une recette, un ingrédient ...">
+                <input type="search" placeholder="Recherche une recette, un ingrédient ..." id="searchBar">
                 <a href="#">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </a>
@@ -22,8 +22,22 @@
         </div>
     </header>
     <main>
-        
+        <div id="filterComponent">
+            <div id="filterGroup">
+                <select name="ingredient" id="ingredientFilter" class="filters"><option value="ingredient">Ingredients</option></select>
+                <select name="appareils" id="appareilsFilter" class="filters"><option value="appareil">Appareils</option></select>
+                <select name="ustensiles" id="ustensilesFilter" class="filters"><option value="ustensile">Ustensiles</option></select>
+            </div>
+            <div id="filterText">
+                <p><span id="nbrRecipe">0</span> recettes</p>
+            </div>
+        </div>
+        <section id="recipList">
+            
+        </section>
     </main>
     <script src="https://kit.fontawesome.com/8646550a66.js" crossorigin="anonymous"></script>
+    <script src="/scripts/getData.js"></script>
+    <script src="/scripts/filterData.js"></script>
 </body>
 </html>
