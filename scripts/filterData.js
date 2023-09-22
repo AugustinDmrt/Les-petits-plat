@@ -3,41 +3,27 @@ let appareilsFilter = document.getElementById('appareilsFilter');
 let ustensilesFilter = document.getElementById('ustensilesFilter');
 let searchBar = document.getElementById('searchBar');
 let recipeCard = document.getElementById('recipList');
-
-const customSelect = document.querySelector('.custom-select');
-const optionsList = customSelect.querySelector('.options');
-const searchInput = customSelect.querySelector('.search-input');
-const optionItems = Array.from(optionsList.querySelectorAll('.option'));
-
-
-customSelect.addEventListener('click', function() {
-    optionsList.style.display = 'block';
-  });
-
-  searchInput.addEventListener('input', function() {
-    const searchText = searchInput.value.toLowerCase();
-    optionItems.forEach(option => {
-      const text = option.textContent.toLowerCase();
-      if (text.includes(searchText)) {
-        option.style.display = 'block';
-      } else {
-        option.style.display = 'none';
-      }
-    });
-  });
-
-  optionsList.addEventListener('click', function(e) {
-    if (e.target.classList.contains('option')) {
-      const selectedOption = e.target.textContent;
-      customSelect.querySelector('.select-btn').textContent = selectedOption;
-      optionsList.style.display = 'none';
-    }
-  });
+let nbrRecipeCard = document.getElementById('nbrRecipe');
 
 searchBar.addEventListener('keyup', searchRecipes);
 ingredientFilter.addEventListener('change', ingredientSelector);
 appareilsFilter.addEventListener('change', appareilsSelector);
 ustensilesFilter.addEventListener('change', ustensilesSelector);
+
+function QuantityOfCard(e){
+    let i = 0;
+    const recipes = recipeCard.childNodes;
+    recipes.forEach(function(recipe){
+        if(recipe.className === 'card'){
+            let quantity = recipe.style.display;
+            if (quantity == 'flex'){
+                i +=1;
+            }
+        }
+    });
+    nbrRecipeCard.innerHTML = i;
+}
+
 
 function searchRecipes(e){
     let searchTerm = e.target.value.toLowerCase();
@@ -53,6 +39,7 @@ function searchRecipes(e){
 
         }
     });
+    QuantityOfCard()
 }
 
 function ingredientSelector(e){

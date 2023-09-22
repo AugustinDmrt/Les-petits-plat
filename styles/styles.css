@@ -293,45 +293,6 @@ main{
     color: #7A7A7A;
 }
 
-.custom-select {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  /* Styles pour le bouton du menu déroulant */
-  .custom-select .select-btn {
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-  }
-
-  /* Styles pour la zone de recherche */
-  .custom-select .search-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-
-  /* Styles pour la liste des options */
-  .custom-select .options {
-    position: absolute;
-    display: none;
-    z-index: 1;
-    border: 1px solid #ccc;
-    background-color: #fff;
-  }
-
-  /* Styles pour chaque option */
-  .custom-select .option {
-    padding: 10px;
-    cursor: pointer;
-  }
-
-  /* Lorsque l'utilisateur survole une option */
-  .custom-select .option:hover {
-    background-color: #f5f5f5;
-  }
 
 
 
