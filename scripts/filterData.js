@@ -24,7 +24,6 @@ function QuantityOfCard(e){
     nbrRecipeCard.innerHTML = i;
 }
 
-
 function searchRecipes(e){
     let searchTerm = e.target.value.toLowerCase();
     const recipes = recipeCard.childNodes;
