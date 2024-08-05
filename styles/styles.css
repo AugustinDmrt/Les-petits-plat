@@ -1,319 +1,351 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Manrope&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Manrope&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
 
-header{
-    background-image: url(/assets/images/HeaderImage/lampos-aritonang-24gr_9lcdes-unsplash1.png);
-    background-size: cover;
-    width: 100%;
-    height: 667px;
-    display: flex;
-    flex-direction: column;
-
+header {
+  background-image: url(/assets/images/HeaderImage/lampos-aritonang-24gr_9lcdes-unsplash1.png);
+  background-size: cover;
+  width: 100%;
+  height: 667px;
+  display: flex;
+  flex-direction: column;
 }
 
-#logo{
-    display: flex;
-    margin-top: 51px;
-    margin-left: 69px;
-    width: 260px;
+#logo {
+  display: flex;
+  margin-top: 51px;
+  margin-left: 69px;
+  width: 260px;
 }
 
-#textHeader{
-    color:#FFD15B ;
-    font-size: 1.5em;
-    font-family: Anton;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 150px ;
-
+#textHeader {
+  color: #ffd15b;
+  font-size: 1.5em;
+  font-family: Anton;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 150px;
 }
 
-.searchBar{
-    margin-top: 30px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-
-
+.searchBar {
+  margin-top: 30px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
 }
 
-.searchBarContent{
-    background-color: white;
-    width: 900px;
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    border-radius: 15px;
-
+.searchBarContent {
+  background-color: white;
+  width: 900px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 15px;
 }
 
-input{
-    border: none;
-    font-size: 15px;
-    padding: 20px;
-    width: 800px;
+input {
+  border: none;
+  font-size: 15px;
+  padding: 20px;
+  width: 800px;
 }
 
-input:focus{
-    outline:none!important ;
-
+input:focus {
+  outline: none !important ;
 }
 
-a{
-    text-decoration: none;
-    background-color: #1B1B1B;
-    border-radius: 11px;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+a {
+  text-decoration: none;
+  background-color: #1b1b1b;
+  border-radius: 11px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-a i{
-    color: White;
+a i {
+  color: White;
 }
 
-main{
-    background-color: lightgray;
-    width: 100%;
-    height: 100%;
+main {
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
 }
 
-#filterComponent{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 90px;
+#filterComponent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 90px;
 }
 
-#filterGroup{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 50%;
-    border-radius: 15px;
+#filterGroup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  border-radius: 15px;
 }
 
-#filterGroup select{
-    border-radius: 11px;
-    border: none;
-    padding-left: 15px;
-    outline: none;
+#filterGroup select {
+  border-radius: 11px;
+  border: none;
+  padding-left: 15px;
+  outline: none;
 }
 
-.filters{
-    width: 140px;
-    height: 45px;
+.filters {
+  width: 140px;
+  height: 45px;
 }
 
-#filterText{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 50%;
-    margin-right: 40px;
-    font-family: Anton;
+#filterText {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+  margin-right: 40px;
+  font-family: Anton;
 }
 
-#tagComponent{
-    display: flex;
-    width: 100%;
-    height: 90px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+#tagComponent {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
-#tagGroup{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+#tagGroup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.tagItem{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height:53px;
-    border-radius: 10px;
-    background-color: #FFD15B;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-right: 20px;
-    margin-left: 20px;
+.tagItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 53px;
+  border-radius: 10px;
+  background-color: #ffd15b;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-.tagItem p{
-    font-family: "Manrope";
-    padding-right: 20px;
-    font-size: 14px;
+.tagItem p {
+  font-family: "Manrope";
+  padding-right: 20px;
+  font-size: 14px;
 }
 
-#recipList{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+#recipList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 15px;
-    width: 350px;
-    height: 600px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    margin-bottom: 50px;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  width: 350px;
+  height: 600px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
-.cardImage{
-    display: flex;
-    width: 100%;
-    height: 33%;
-    position: relative;
+.cardImage {
+  display: flex;
+  width: 100%;
+  height: 33%;
+  position: relative;
 }
 
-.cardImage img{
-    width: 100%;
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
+.cardImage img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
 }
 
-.cardImage span{
-    background-color: #FFD15B;
-    width: 63px;
-    height: 26px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-family: "Manrope";
-    display: flex;
-    align-items: center;
-    justify-content: center ;
-    border-radius: 14px;
-    font-size: 12px;
+.cardImage span {
+  background-color: #ffd15b;
+  width: 63px;
+  height: 26px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: "Manrope";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 12px;
 }
 
-.cardTitle{
-    display: flex;
-    width: 100%;
-    height: 50px;
-    font-family: "Anton";
-    color: #1B1B1B;
-    padding-left: 20px;
-    margin-top: 25px;
+.cardTitle {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-family: "Anton";
+  color: #1b1b1b;
+  padding-left: 20px;
+  margin-top: 25px;
 }
 
-.cardTitle h2{
-    font-size: 18px;
-
+.cardTitle h2 {
+  font-size: 18px;
 }
 
-.cardDescribe{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-family: "Manrope";
-    font-size: 12px;
-    color: #7A7A7A;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 15px;
+.cardDescribe {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: "Manrope";
+  font-size: 12px;
+  color: #7a7a7a;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 15px;
 }
 
-.cardDescribe p{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: wrap;
-    max-height: 100px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5; 
-}
-    
-
-
-.cardDescribe p:first-child{
-    padding-bottom: 7px;
+.cardDescribe p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: wrap;
+  max-height: 100px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
 }
 
-
-.cardIngredient{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-family: Manrope;
-    font-size: 12px;
-    
+.cardDescribe p:first-child {
+  padding-bottom: 7px;
 }
 
-.cardIngredient > p{
-    padding-left: 20px;
-    color: #7A7A7A;
+.cardIngredient {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: Manrope;
+  font-size: 12px;
 }
 
-.listComponent{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    
+.cardIngredient > p {
+  padding-left: 20px;
+  color: #7a7a7a;
 }
 
-.listItem{
-    display: flex;
-    flex-direction: column;
-    width: 44%;
-    padding-left: 20px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.listComponent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.listItem p{
-    font-weight: bold;
+.listItem {
+  display: flex;
+  flex-direction: column;
+  width: 44%;
+  padding-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-
-.listItem span{
-    color: #7A7A7A;
+.listItem p {
+  font-weight: bold;
 }
 
+.listItem span {
+  color: #7a7a7a;
+}
 
+.dropdown-container {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  position: relative;
+}
 
+.dropdown-header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+}
 
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid #ddd;
+  position: absolute;
+  z-index: 1000;
+  width: 200px;
+}
 
-    
+.dropdown-toggle {
+  background: none;
+  border: none;
+  font-size: 16px;
+}
 
+.dropdown-content input {
+  padding: 5px;
+  margin-bottom: 10px;
+  width: calc(100% - 10px);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
 
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.dropdown-content ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
 
+.dropdown-content ul li:hover {
+  background-color: #f0f0f0;
+}
 
+.dropdown-content ul li:last-child {
+  border-bottom: none;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.selected-item {
+  background-color: #ffd15b;
+  color: black;
+  font-weight: bold;
+}

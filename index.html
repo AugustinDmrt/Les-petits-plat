@@ -1,73 +1,105 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/styles.css" />
     <title>Les petits plats</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img id="logo" src="assets/images/logo/logo.png" alt="logo les petits plats">
-        <div id="textHeader">
-            <h1>CHERCHEZ PARMI PLUS DE 1500 RECETTES <br> DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+      <img
+        id="logo"
+        src="assets/images/logo/logo.png"
+        alt="logo les petits plats"
+      />
+      <div id="textHeader">
+        <h1>
+          CHERCHEZ PARMI PLUS DE 1500 RECETTES <br />DU QUOTIDIEN, SIMPLES ET
+          DÉLICIEUSES
+        </h1>
+      </div>
+      <div class="searchBar">
+        <div class="searchBarContent">
+          <input
+            type="search"
+            placeholder="Recherche une recette, un ingrédient ..."
+            id="searchBar"
+          />
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
         </div>
-        <div class="searchBar">
-            <div class="searchBarContent">
-                <input type="search" placeholder="Recherche une recette, un ingrédient ..." id="searchBar">
-                <a href="#">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
-            </div>
-        </div>
+      </div>
     </header>
     <main>
-        <div id="filterComponent">
-            <div id="filterGroup">
-                <select name="ingredient" id="ingredientFilter" class="filters">
-                    <option value="ingredient">Ingredients</option>
-                </select>
-                <select name="appareils" id="appareilsFilter" class="filters">
-                    <option value="appareil">Appareils</option>
-                </select>
-                <select name="ustensiles" id="ustensilesFilter" class="filters">
-                    <option value="ustensile">Ustensiles</option>
-                </select>
+      <div id="filterComponent">
+        <div id="filterGroup">
+          <div class="dropdown-container">
+            <div
+              class="dropdown-header"
+              onclick="toggleDropdown('ingredientDropdown')"
+            >
+              <span>Ingrédients</span>
+              <button class="dropdown-toggle">&#9662;</button>
             </div>
-            <div id="filterText">
-                <p><span id="nbrRecipe">0</span> recettes</p>
+            <div class="dropdown-content" id="ingredientDropdown">
+              <input
+                type="text"
+                id="searchIngredient"
+                placeholder="Rechercher..."
+              />
+              <ul id="ingredientList"></ul>
             </div>
+          </div>
+          <div class="dropdown-container">
+            <div
+              class="dropdown-header"
+              onclick="toggleDropdown('applianceDropdown')"
+            >
+              <span>Appareils</span>
+              <button class="dropdown-toggle">&#9662;</button>
+            </div>
+            <div class="dropdown-content" id="applianceDropdown">
+              <input
+                type="text"
+                id="searchAppliance"
+                placeholder="Rechercher..."
+              />
+              <ul id="applianceList"></ul>
+            </div>
+          </div>
+          <div class="dropdown-container">
+            <div
+              class="dropdown-header"
+              onclick="toggleDropdown('ustensilDropdown')"
+            >
+              <span>Ustensiles</span>
+              <button class="dropdown-toggle">&#9662;</button>
+            </div>
+            <div class="dropdown-content" id="ustensilDropdown">
+              <input
+                type="text"
+                id="searchUstensil"
+                placeholder="Rechercher..."
+              />
+              <ul id="ustensilList"></ul>
+            </div>
+          </div>
         </div>
-        <div id="tagComponent">
-            <div id="tagGroup">
-                <div class="tagItem">
-                    <p>Créme de coco</p> 
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div class="tagItem">
-                    <p>Lait de coco</p> 
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div class="tagItem">
-                    <p>lait de thomas</p> 
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div class="tagItem">
-                    <p>lorem de coco</p> 
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div class="tagItem">
-                    <p>Tom</p> 
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-            </div>
+        <div id="filterText">
+          <p><span id="nbrRecipe">0</span> recettes</p>
         </div>
-        <section id="recipList">
-            
-        </section>
+      </div>
+      <div id="tagComponent">
+        <div id="tagGroup"></div>
+      </div>
+      <section id="recipList"></section>
     </main>
-    <script src="https://kit.fontawesome.com/8646550a66.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8646550a66.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="/scripts/getData.js"></script>
     <script src="/scripts/filterData.js"></script>
-</body>
+    <script src="/scripts/dropdown.js"></script>
+  </body>
 </html>
