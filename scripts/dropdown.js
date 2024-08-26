@@ -155,9 +155,9 @@ let recipesIngr = [];
 let recipesApp = [];
 let ATERecipes = [];
 
-const selectedIngr = [];
-const selectedApp = [];
-const selectedUst = [];
+let selectedIngr = [];
+let selectedApp = [];
+let selectedUst = [];
 // -----------------------------------------------------
 
 async function allSearch() {
@@ -165,6 +165,10 @@ async function allSearch() {
   recipesIngr = [];
   recipesApp = [];
   ATERecipes = [];
+
+  selectedIngr = [];
+  selectedApp = [];
+  selectedUst = [];
   // ---------------------------------------------
 
   await searchIngr();
@@ -179,16 +183,28 @@ async function allSearch() {
   // -----------------------------------------------------
 
   // Afficher toutes les recette filtré qui sont dans ATERecipes ----------------------------------------------------
-  ATERecipes.forEach((recipe) => {
+  if (
+    selectedIngr.length === 0 &&
+    selectedApp.length === 0 &&
+    selectedUst.length === 0
+  ) {
     for (let i = 0; i < allRecipes.children.length; i++) {
-      if (
-        recipe.children[1].innerText.toLowerCase() ==
-        allRecipes.children[i].children[1].innerText.toLowerCase()
-      ) {
-        allRecipes.children[i].style.display = "flex";
-      }
+      allRecipes.children[i].style.display = "flex";
     }
-  });
+    nbrRecipe.innerHTML = allRecipes.children.length;
+  } else {
+    ATERecipes.forEach((recipe) => {
+      for (let i = 0; i < allRecipes.children.length; i++) {
+        if (
+          recipe.children[1].innerText.toLowerCase() ==
+          allRecipes.children[i].children[1].innerText.toLowerCase()
+        ) {
+          allRecipes.children[i].style.display = "flex";
+        }
+      }
+    });
+    nbrRecipe.innerHTML = ATERecipes.length;
+  }
   // ----------------------------------------------------------------------------------------------------------------
 }
 
