@@ -42,17 +42,17 @@ function fillSelector(datas) {
   let ustensils = [];
 
   datas.forEach((data) => {
-    if (!appliances.includes(data.appliance)) {
-      appliances.push(data.appliance);
+    if (!appliances.includes(data.appliance.toLowerCase())) {
+      appliances.push(data.appliance.toLowerCase());
     }
     data.ingredients.forEach((ingr) => {
-      if (!ingredients.includes(ingr.ingredient)) {
-        ingredients.push(ingr.ingredient);
+      if (!ingredients.includes(ingr.ingredient.toLowerCase())) {
+        ingredients.push(ingr.ingredient.toLowerCase());
       }
     });
     data.ustensils.forEach((ust) => {
-      if (!ustensils.includes(ust)) {
-        ustensils.push(ust);
+      if (!ustensils.includes(ust.toLowerCase())) {
+        ustensils.push(ust.toLowerCase());
       }
     });
   });
@@ -116,6 +116,8 @@ function addTag(text) {
   tagItem.appendChild(tagText);
   tagItem.appendChild(tagClose);
   tagGroup.appendChild(tagItem);
+
+  allSearch();
 }
 
 function removeTag(text) {
@@ -135,6 +137,8 @@ function removeTag(text) {
       item.classList.remove("selected-item");
     }
   });
+
+  allSearch();
 }
 
 fetch("../data/recipes.json")
@@ -142,5 +146,127 @@ fetch("../data/recipes.json")
   .then((data) => {
     displayRecipes(data);
     fillSelector(data);
+    const recipList = data;
   })
   .catch((err) => console.log(err));
+
+// Initialisation des variable globale pour les filtres
+let recipesIngr = [];
+let recipesApp = [];
+let ATERecipes = [];
+
+const selectedIngr = [];
+const selectedApp = [];
+const selectedUst = [];
+// -----------------------------------------------------
+
+async function allSearch() {
+  // Reset des recettes filtré avant de rechercher
+  recipesIngr = [];
+  recipesApp = [];
+  ATERecipes = [];
+  // ---------------------------------------------
+
+  await searchIngr();
+  await searchApp();
+  await searchUst();
+
+  // Cacher toutes les recette ---------------------------
+  const allRecipes = document.getElementById("recipList");
+  for (let i = 0; i < allRecipes.children.length; i++) {
+    allRecipes.children[i].style.display = "none";
+  }
+  // -----------------------------------------------------
+
+  // Afficher toutes les recette filtré qui sont dans ATERecipes ----------------------------------------------------
+  ATERecipes.forEach((recipe) => {
+    for (let i = 0; i < allRecipes.children.length; i++) {
+      if (
+        recipe.children[1].innerText.toLowerCase() ==
+        allRecipes.children[i].children[1].innerText.toLowerCase()
+      ) {
+        allRecipes.children[i].style.display = "flex";
+      }
+    }
+  });
+  // ----------------------------------------------------------------------------------------------------------------
+}
+
+// Get Ingr ----------------------------------------------------------
+function searchIngr() {
+  const allIngr = document.getElementById("ingredientList").children;
+
+  for (let i = 0; i < allIngr.length; i++) {
+    if (allIngr[i].className === "selected-item") {
+      selectedIngr.push(allIngr[i].innerHTML);
+    }
+  }
+
+  if (selectedIngr.length == 0) {
+    // for (let i = 0; i < recipList.children.length; i++) {
+    //   recipesIngr.push(recipList.children[i]);
+    // }
+    recipesIngr = recipList;
+  } else {
+    selectedIngr.forEach((ingr) => {
+      for (let i = 0; i < recipList.children.length; i++) {
+        if (recipList.children[i].innerHTML.includes(ingr)) {
+          recipesIngr.push(recipList.children[i]);
+        }
+      }
+    });
+  }
+}
+//---------------------------------------------------------------------
+
+// Get App ----------------------------------------------------------
+function searchApp() {
+  const allApp = document.getElementById("applianceList").children;
+
+  for (let i = 0; i < allApp.length; i++) {
+    if (allApp[i].className === "selected-item") {
+      selectedApp.push(allApp[i].innerHTML);
+    }
+  }
+
+  if (selectedApp.length == 0) {
+    if (selectedIngr.length == 0) {
+      recipesApp = recipList;
+    } else {
+      recipesApp = recipesIngr;
+    }
+  } else {
+    selectedApp.forEach((ingr) => {
+      for (let i = 0; i < recipesIngr.length; i++) {
+        if (recipesIngr[i].innerHTML.includes(ingr)) {
+          recipesApp.push(recipesIngr[i]);
+        }
+      }
+    });
+  }
+}
+//---------------------------------------------------------------------
+
+// Get Ust ----------------------------------------------------------
+function searchUst() {
+  const allApp = document.getElementById("ustensilList").children;
+
+  for (let i = 0; i < allApp.length; i++) {
+    if (allApp[i].className === "selected-item") {
+      selectedUst.push(allApp[i].innerHTML);
+    }
+  }
+
+  if (selectedUst.length == 0) {
+    ATERecipes = recipesApp;
+  } else {
+    selectedUst.forEach((ingr) => {
+      for (let i = 0; i < recipesApp.length; i++) {
+        if (recipesApp[i].innerHTML.includes(ingr)) {
+          ATERecipes.push(recipesApp[i]);
+        }
+      }
+    });
+  }
+}
+//---------------------------------------------------------------------
