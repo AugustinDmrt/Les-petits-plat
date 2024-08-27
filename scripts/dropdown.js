@@ -252,9 +252,9 @@ function searchApp() {
       recipesApp = recipesIngr;
     }
   } else {
-    selectedApp.forEach((ingr) => {
+    selectedApp.forEach((app) => {
       for (let i = 0; i < recipesIngr.length; i++) {
-        if (recipesIngr[i].innerHTML.includes(ingr)) {
+        if (recipesIngr[i].innerHTML.includes(app)) {
           recipesApp.push(recipesIngr[i]);
         }
       }
@@ -276,9 +276,9 @@ function searchUst() {
   if (selectedUst.length == 0) {
     ATERecipes = recipesApp;
   } else {
-    selectedUst.forEach((ingr) => {
+    selectedUst.forEach((ust) => {
       for (let i = 0; i < recipesApp.length; i++) {
-        if (recipesApp[i].innerHTML.includes(ingr)) {
+        if (recipesApp[i].innerHTML.includes(ust)) {
           ATERecipes.push(recipesApp[i]);
         }
       }

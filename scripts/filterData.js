@@ -17,7 +17,30 @@ function QuantityOfCard() {
 
 function searchRecipes(e) {
   let searchTerm = e.target.value.toLowerCase();
-  applyFilters(searchTerm);
+  const recipes = recipeCard.childNodes;
+
+  // Iterate over all recipe cards using a for loop
+  for (let i = 0; i < recipes.length; i++) {
+    const recipe = recipes[i];
+    if (recipe.className === "card") {
+      let matchesSearchTerm = false;
+
+      // Check if the search term matches any part of the recipe's text content
+      if (recipe.textContent.toLowerCase().includes(searchTerm)) {
+        matchesSearchTerm = true;
+      }
+
+      // Display or hide the recipe based on the search term match
+      if (matchesSearchTerm) {
+        recipe.style.display = "flex";
+      } else {
+        recipe.style.display = "none";
+      }
+    }
+  }
+
+  // Update recipe count
+  QuantityOfCard();
 }
 
 function filterByIngredient(ingredients, ingredientTags) {
